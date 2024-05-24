@@ -1,0 +1,105 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment 4</title>
+  </head>
+
+  <body onload="main()" )>
+    <canvas id="webgl" width="400" height="400">
+      Please use a browser that supports "canvas"
+    </canvas>
+    <p></p>
+
+    <p id="numdot">XXX</p>
+
+    <p>Story: Help Tommy the cat find his mouse "friend" Jerr.</p>
+    <p>Controls:</p>
+    <p>Rotate: Keys Q and E</p>
+    <p>Move Right/Left: Arrow Keys</p>
+
+    <button type="button" id="normalOn">Normal On</button>
+    <button type="button" id="normalOff">Normal Off</button>
+
+    <p>
+      Light X <input type="range" min="-250" max="250" value="0" class="slider" id="lightSlideX">
+      Light Y <input type="range" min="-250" max="250" value="100" class="slider" id="lightSlideY">
+      Light Z <input type="range" min="-250" max="250" value="-200" class="slider" id="lightSlideZ">
+     <p>
+      Light:
+    <button type="button" id="lightOn">ON</button>
+    <button type="button" id="lightOff">OFF</button>
+
+    <p>
+      X
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value="100"
+        class="slider"
+        id="redSlide"
+      />
+    </p>
+
+    <p>
+      Magenta
+      <input
+        type="range"
+        min="-45"
+        max="45"
+        value="0"
+        class="slider"
+        id="magentaSlide"
+      />
+    </p>
+
+    <p>
+      Yellow
+      <input
+        type="range"
+        min="-45"
+        max="45"
+        value="0"
+        class="slider"
+        id="yellowSlide"
+      />
+    </p>
+
+    Animation:
+    <button type="button" id="animationYellowOnButton">ON</button>
+    <button type="button" id="animationYellowOffButton">OFF</button>
+
+    Animation:
+    <button type="button" id="animationMagentaOnButton">ON</button>
+    <button type="button" id="animationMagentaOffButton">OFF</button>
+
+    <p>
+      Camera Angle
+      <input
+        type="range"
+        min="-180"
+        max="180"
+        value="5"
+        class="slider"
+        id="angleSlide"
+      />
+    </p>
+
+    <p></p>
+
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix.js"></script>
+    <script src="../world/Triangle.js"></script>
+    <script src="../world/Circle.js"></script>
+    <script src="../world/Point.js"></script>
+    <script src="../world/Cube.js"></script>
+    <script src="../world/Cylinder.js"></script>
+    <script src="../world/CubePrism.js"></script>
+    <script src="../world/Sphere.js"></script>
+    <script src="../world/Camera.js"></script>
+    <script src="../world/World.js"></script>
+  </body>
+</html>
+
