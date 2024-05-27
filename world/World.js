@@ -581,6 +581,10 @@ function keydown(ev) {
     g_camera.panLeft();
   } else if (ev.keyCode == 69) {
     g_camera.panRight();
+  } else if (ev.keyCode == 38) {
+    g_camera.forward();
+  } else if (ev.keyCode == 40) {
+    g_camera.back();
   }
 
   renderAllShapes();
