@@ -82,7 +82,7 @@ function drawCat() {
   body.matrix.rotate(0, 1, 0, 0);
   var bodyCoordinatesMat = new Matrix4(body.matrix);
   body.matrix.scale(4, 2, 5);
-//   body.normalMatrix.setInverseOf(body.matrix).transpose();
+  //   body.normalMatrix.setInverseOf(body.matrix).transpose();
   body.render();
 
   // Cat Head
@@ -302,7 +302,7 @@ function drawFurniture() {
   painting.matrix.translate(-2.9, 1, 4);
   painting.matrix.rotate(360, 1, 0, 0);
   painting.matrix.scale(3.9, 3.9, -0.2);
-//   painting.normalMatrix.setInverseOf(painting.matrix).transpose();
+  //   painting.normalMatrix.setInverseOf(painting.matrix).transpose();
   painting.render();
 
   // Cat Tower
@@ -423,8 +423,15 @@ function drawFurniture() {
 
 function drawAllShapes() {
   // Pass light pos to GLSL
-  gl.uniform3fv(u_lightPos, g_lightPos);
-  gl.uniform3fv(u_cameraPos, g_camera.eye.elements);
+  gl.uniform3f(u_lightPos, g_lightPos[0], g_lightPos[1], g_lightPos[2]);
+  //   gl.uniform3fv(u_lightPos, g_lightPos);
+  //   gl.uniform3fv(u_cameraPos, g_camera.eye.elements);
+  gl.uniform3f(
+    u_cameraPos,
+    g_camera.eye.elements[0],
+    g_camera.eye.elements[1],
+    g_camera.eye.elements[2]
+  );
   gl.uniform1i(u_lightOn, g_lightOn);
 
   drawCat();
@@ -443,7 +450,7 @@ function drawAllShapes() {
   if (g_normalOn) sphere.textureNum = -3;
   sphere.matrix.translate(-0.7, 0.65, 0);
   sphere.matrix.scale(0.5, 0.5, 0.5);
-//   sphere.normalMatrix.setInverseOf(sphere.matrix).transpose();
+  //   sphere.normalMatrix.setInverseOf(sphere.matrix).transpose();
   sphere.render();
 
   var sky = new Cube();
@@ -452,7 +459,7 @@ function drawAllShapes() {
   if (g_normalOn) sky.textureNum = -3;
   sky.matrix.scale(50, 50, 50);
   sky.matrix.translate(-0.5, -0.5, -0.5);
-//   sky.normalMatrix.setInverseOf(sky.matrix).transpose();
+  //   sky.normalMatrix.setInverseOf(sky.matrix).transpose();
   sky.render();
 
   var body = new Cube();

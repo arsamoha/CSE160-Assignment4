@@ -92,11 +92,7 @@ var FSHADER_SOURCE = `
     vec3 diffuse = vec3(1.0,1.0,0.9) * vec3(gl_FragColor) * nDotL *0.7;
     vec3 ambient = vec3(gl_FragColor) * 0.2;
     if (u_lightOn) {
-      if (u_whichTexture == -2) {
         gl_FragColor = vec4(specular+diffuse+ambient, 1.0);
-      } else {
-        gl_FragColor = vec4(diffuse+ambient, 1.0);
-      }
     }
     // gl_FragColor = vec4(abs(vec3(normalize(u_cameraPos))), 1);
   }`;
